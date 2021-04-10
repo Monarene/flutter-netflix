@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_netflix_responsive_ui/cubits/cubits.dart';
+import 'package:flutter_netflix_responsive_ui/screens%20/HomeScreen.dart';
 
 class NavScreen extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = [
-    Scaffold(),
+    HomeScreen(),
     Scaffold(),
     Scaffold(),
     Scaffold(),
