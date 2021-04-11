@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_netflix_responsive_ui/cubits/cubits.dart';
+import 'package:flutter_netflix_responsive_ui/data/data.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,7 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _scrollController,
         slivers: [
           SliverToBoxAdapter(
-            child: Text("Content Header"),
+            child: ContentHeader(
+              featuredContent: sintelContent,
+            ),
           )
         ],
       ),
