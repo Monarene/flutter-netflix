@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_netflix_responsive_ui/cubits/cubits.dart';
+import 'package:flutter_netflix_responsive_ui/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -34,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.blueAccent,
       extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey[850],
@@ -42,10 +44,20 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 50),
-        child: Text("On the way"),
+        child:
+            BlocBuilder<AppBarCubit, double>(builder: (context, scrollOffset) {
+          return CustomAppBar(
+            scrollOffset: scrollOffset,
+          );
+        }),
       ),
-      body: Center(
-        child: Text("Home Screen"),
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          SliverToBoxAdapter(
+            child: Text("Content Header"),
+          )
+        ],
       ),
     );
   }
