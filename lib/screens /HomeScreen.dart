@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 50),
+        child: Text("On the way"),
       ),
       body: Center(
         child: Text("Home Screen"),

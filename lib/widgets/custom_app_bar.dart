@@ -16,8 +16,21 @@ class CustomAppBar extends StatelessWidget {
 }
 
 class AppBarButton extends StatelessWidget {
+  final String title;
+  final Function onTap;
+
+  const AppBarButton({Key key, @required this.title, @required this.onTap})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return GestureDetector(
+      onTap: onTap,
+      child: Text(
+        title,
+        style: TextStyle(
+            color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16),
+      ),
+    );
   }
 }
