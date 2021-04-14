@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Previews(
                 key: PageStorageKey("previews"),
                 title: "Previews",
-                contentList: myList,
+                contentList: previews,
               ),
             ),
           )
