@@ -10,7 +10,7 @@ class ContentList extends StatelessWidget {
       {Key key,
       @required this.title,
       @required this.contentList,
-      @required this.isOriginals})
+      this.isOriginals})
       : super(key: key);
   @override
   Widget build(BuildContext context) {

@@ -75,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ContentList(
               key: PageStorageKey("myList"),
               title: "My List",
+              contentList: myList,
             ),
           ),
           SliverToBoxAdapter(

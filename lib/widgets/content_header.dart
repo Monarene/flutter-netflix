@@ -44,7 +44,7 @@ class ContentHeader extends StatelessWidget {
                   icon: Icons.add,
                   title: "List",
                   onTap: () => print("My List")),
-              _PlsyButton(),
+              _PlayButton(),
               VerticalIconButton(
                   icon: Icons.info_outline,
                   title: "Info",
@@ -57,19 +57,21 @@ class ContentHeader extends StatelessWidget {
   }
 }
 
-class _PlsyButton extends StatelessWidget {
+class _PlayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-        padding: EdgeInsets.fromLTRB(15, 5, 20, 5),
-        onPressed: () => print("play"),
-        icon: const Icon(
-          Icons.play_arrow,
-          size: 30,
-        ),
-        label: const Text(
-          "Play",
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-        ));
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(15, 5, 20, 5),
+      child: TextButton.icon(
+          onPressed: () => print("play"),
+          icon: const Icon(
+            Icons.play_arrow,
+            size: 30,
+          ),
+          label: const Text(
+            "Play",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          )),
+    );
   }
 }
