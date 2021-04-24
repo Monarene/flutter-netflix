@@ -10,14 +10,47 @@ class ContentList extends StatelessWidget {
       {Key key,
       @required this.title,
       @required this.contentList,
-      this.isOriginals})
+      this.isOriginals = false})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6.0),
       child: Column(
-        children: [],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            height: isOriginals ? 500.0 : 220,
+            child: ListView.builder(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+              scrollDirection: Axis.horizontal,
+              itemCount: contentList.length,
+              itemBuilder: (BuildContext context, int index) {
+                final Content content = contentList[index];
+                return GestureDetector();
+              },
+            ),
+          )
+        ],
       ),
     );
   }
