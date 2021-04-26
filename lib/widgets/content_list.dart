@@ -46,7 +46,18 @@ class ContentList extends StatelessWidget {
               itemCount: contentList.length,
               itemBuilder: (BuildContext context, int index) {
                 final Content content = contentList[index];
-                return GestureDetector();
+                return GestureDetector(
+                  onTap: () => print(content.name),
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                    height: isOriginals ? 400 : 200,
+                    width: isOriginals ? 200 : 130,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(content.imageUrl),
+                            fit: BoxFit.cover)),
+                  ),
+                );
               },
             ),
           )

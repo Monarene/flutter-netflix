@@ -14,6 +14,7 @@ class _NavScreenState extends State<NavScreen> {
     Scaffold(),
     Scaffold(),
     Scaffold(),
+    Scaffold(),
   ];
 
   final Map<String, IconData> _icons = {
