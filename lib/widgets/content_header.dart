@@ -145,6 +145,15 @@ class __ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
                         end: Alignment.topCenter)),
               ),
             ),
+          ),
+          Positioned(
+            left: 60,
+            right: 60,
+            bottom: 150,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [],
+            ),
           )
         ],
       ),
